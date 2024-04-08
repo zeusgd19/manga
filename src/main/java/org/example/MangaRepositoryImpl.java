@@ -47,7 +47,7 @@ public class MangaRepositoryImpl implements IRepository<Manga> {
     @Override
     public void save(Manga manga) throws SQLException {
         ResultSet rs;
-        PreparedStatement st = null;
+        PreparedStatement st;
         if(manga.getId() == -1){
             String query = "INSERT INTO manga (nombre,fecha_pub,paginas) VALUES (?,?,?)";
             st = this.con.prepareStatement(query);
